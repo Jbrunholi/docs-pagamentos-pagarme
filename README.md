@@ -41,7 +41,7 @@ Esse token substitui os dados sensíveis e pode ser enviado com segurança ao se
 
 ---
 
-## Salvando dados do cartão (máscara)
+## 💾 Salvando dados do cartão (máscara)
 
 
 O backend **não deve armazenar dados sensíveis do cartão**. Porém, em alguns casos pode ser necessário salvar informações não sensíveis para referência do cliente ou auditoria:
