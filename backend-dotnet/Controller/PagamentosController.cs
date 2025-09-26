@@ -5,7 +5,7 @@ public class PagamentosController(IPagamentoService pagamentoService) : Controll
     [HttpPost]
     public async Task<IActionResult> RealizarCobranca([FromBody] RealizarCobrancaPedidoRequest request)
     {
-        var result = await pagarmeService.CriarCobranca(request);
+        var result = await pagamentoService.CriarCobranca(request);
         return Ok(result);
     }
 }
