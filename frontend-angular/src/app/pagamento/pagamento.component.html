@@ -1,0 +1,59 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" data-pagarmecheckout-form>
+  <h2>Pagamento com Pagar.me</h2>
+
+  <div>
+    <label>Número do cartão</label>
+    <input
+      formControlName="numeroCartao"
+      placeholder="1234 1234 1234 1234"
+      data-pagarmecheckout-element="number"
+    />
+  </div>
+
+  <div>
+    <label>Nome impresso</label>
+    <input
+      formControlName="nomeImpresso"
+      placeholder="Nome no cartão"
+      data-pagarmecheckout-element="holder_name"
+    />
+  </div>
+
+  <div>
+    <label>Validade (MM/AA)</label>
+    <input
+      placeholder="MM/AA"
+      data-pagarmecheckout-element="expiration"
+    />
+  </div>
+
+  <div>
+    <label>CVV</label>
+    <input
+      placeholder="CVV"
+      data-pagarmecheckout-element="cvv"
+    />
+  </div>
+
+  <div>
+    <label>Parcelas</label>
+    <input type="number" formControlName="parcelas" min="1" />
+  </div>
+
+  <!-- mocks de negócio -->
+  <div>
+    <label>Nº Pedido</label>
+    <input type="text" formControlName="numeroPedido" />
+  </div>
+
+  <div>
+    <label>
+      <input type="checkbox" formControlName="aceitar" />
+      Aceito os termos
+    </label>
+  </div>
+
+  <button type="submit" [disabled]="loading">Pagar</button>
+
+  <p *ngIf="mensagem">{{ mensagem }}</p>
+</form>

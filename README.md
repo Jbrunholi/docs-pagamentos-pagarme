@@ -25,7 +25,7 @@ Esse token substitui os dados sensíveis e pode ser enviado com segurança ao se
 - Renderizar os campos de cartão utilizando os atributos do `tokenizecard.js` (`data-pagarmecheckout-element`).
 - Coletar as informações de forma segura (sem armazenar no app).
 - Gerar o **token** usando a `pk_*` (public key).
-- Enviar apenas esse token e os dados de negócio (proposta, cotação, parcelas, etc.) para o backend.
+- Enviar apenas esse token e os dados de negócio (Pedido, cotação, parcelas, etc.) para o backend.
 
 👉 Isso garante que o frontend **nunca tenha contato direto** com a `sk_*` e nem precise armazenar dados de cartão.
 
@@ -71,7 +71,7 @@ Essa função transforma `4111111111111111` em `4111 **** **** 1111` antes de sa
 ### Boas práticas de backend
 - Salvar apenas: `nomeImpresso` e `numeroCartaoMascarado`.
 - Nunca salvar CVV ou data de validade.
-- Sempre vincular esses dados ao **id do cliente** ou **id da proposta/apólice** para o caso de uma futura auditoria.
+- Sempre vincular esses dados ao **id do cliente** ou **id da Pedido/apólice** para o caso de uma futura auditoria.
 
 ---
 
@@ -85,7 +85,7 @@ Essa função transforma `4111111111111111` em `4111 **** **** 1111` antes de sa
 ## 🔑 Fluxo de Pagamento
 1. Usuário preenche dados do cartão no frontend.
 2. O **tokenizecard.js** gera um **token seguro** (substitui dados sensíveis).
-3. O frontend envia somente o **token** + dados da proposta para o backend.
+3. O frontend envia somente o **token** + dados da Pedido para o backend.
 4. O backend cria a cobrança com `CardToken` via **Pagar.me**.
 
 ---
